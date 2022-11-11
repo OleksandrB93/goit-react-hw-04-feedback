@@ -34,19 +34,14 @@ export const ButtonStyled = styled.button`
   }
 `;
 
-export const changeShadow = ({ options }) => {
-  const good = options.good;
-  const neutral = options.neutral;
-  const bad = options.bad;
+export const changeShadow = ( {goodPercent} ) => {
+console.log(goodPercent)
 
-  const total = good + neutral + bad;
-  const positiveFeedback = (good / total) * 100;
-
-  if (positiveFeedback < 34) {
+  if (goodPercent < 34) {
     return "rgba(255, 0, 0, 0.8)";
-  } else if (positiveFeedback < 67) {
+  } else if (goodPercent < 67) {
     return "rgba(230, 157, 0, 0.8)";
-  } else if (positiveFeedback > 67) {
+  } else if (goodPercent > 67) {
     return "rgba(0, 198, 0, 0.8)";
   }
   {
