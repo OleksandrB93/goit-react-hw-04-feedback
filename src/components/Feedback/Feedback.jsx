@@ -4,7 +4,7 @@ import Notification from "components/Notification/Notification";
 import FeedbackOption from "components/FeedbackOption/FeedbackOption";
 import Section from "components/Section/Section";
 import StatisticsTitle from "components/StatisticsTitle/StatisticsTitle";
-import { FeedbackContainer } from "components/FeedbackOption/FeedbackOption.styled";
+import { FeedbackContainer } from "components/Feedback/Feedback.styled";
 
 export default function Feedback() {
   const [good, setGood] = useState(0);
@@ -39,13 +39,9 @@ export default function Feedback() {
   const options = { good: "good", neutral: "neutral", bad: "bad" };
 
   return (
-    <FeedbackContainer options={options}>
+    <FeedbackContainer options={options} goodPercent={goodPercent()}>
       <Section title="Please leave feedback" goodPercent={goodPercent()}>
-        <FeedbackOption
-          goodPercent={goodPercent()}
-          options={options}
-          onLeaveFeedback={onClickBtn}
-        />
+        <FeedbackOption options={options} onLeaveFeedback={onClickBtn} />
       </Section>
 
       <section>

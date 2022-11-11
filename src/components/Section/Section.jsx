@@ -6,7 +6,10 @@ export default function Section({ title, children, goodPercent }) {
 
   function imgFeedback() {
     let img = "";
-    if (goodPercent < 34) {
+
+    if (goodPercent === 0) {
+      return (img = "🥺");
+    } else if (goodPercent < 34) {
       return (img = "😡");
     } else if (goodPercent < 67) {
       return (img = "😞");
@@ -19,7 +22,7 @@ export default function Section({ title, children, goodPercent }) {
     <section>
       <Title>
         {title}
-      {imgFeedback()}
+        {imgFeedback()}
       </Title>
       {children}
     </section>

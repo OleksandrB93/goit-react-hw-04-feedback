@@ -1,11 +1,7 @@
 import { ButtonContainer, ButtonStyled } from "./FeedbackOption.styled";
 
-export default function FeedbackOption({
-  goodPercent,
-  options,
-  onLeaveFeedback,
-}) {
-  // console.log(goodPercent)
+export default function FeedbackOption({ options, onLeaveFeedback }) {
+
   return (
     <ButtonContainer>
       {Object.keys(options).map((key) => (
