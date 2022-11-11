@@ -1,3 +1,3 @@
 export default function Notification({ message }) {
-  return message && <p>{message}</p>;
+  return  <p>{message}</p>;
 }

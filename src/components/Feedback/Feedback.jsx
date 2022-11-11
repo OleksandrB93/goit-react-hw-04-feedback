@@ -3,8 +3,8 @@ import Statistics from "components/Statistics/Statistics";
 import Notification from "components/Notification/Notification";
 import FeedbackOption from "components/FeedbackOption/FeedbackOption";
 import Section from "components/Section/Section";
-import { FeedbackContainer } from "./Feedback.styled";
 import StatisticsTitle from "components/StatisticsTitle/StatisticsTitle";
+import { FeedbackContainer } from "components/FeedbackOption/FeedbackOption.styled";
 
 export default class Feedback extends Component {
   state = {
@@ -13,12 +13,10 @@ export default class Feedback extends Component {
     bad: 0,
   };
 
-onClickBtn = event => 
-this.setState(prevState=>({
-  [event.target.name]: prevState[event.target.name] +1,
-}))
-
-
+  onClickBtn = (event) =>
+    this.setState((prevState) => ({
+      [event.target.name]: prevState[event.target.name] + 1,
+    }));
 
   totalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -31,12 +29,11 @@ this.setState(prevState=>({
 
   render() {
     return (
-      <FeedbackContainer>
-        <Section title="Please leave feedback 🥺">
+      <FeedbackContainer options={this.state}>
+        <Section title="Please leave feedback" goodPercent={this.goodPercent()}>
           <FeedbackOption
             options={this.state}
             onLeaveFeedback={this.onClickBtn}
-      
           />
         </Section>
 

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const StatisticsContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -38,7 +37,7 @@ export const Total = styled.span`
   padding: 5px;
   background-color: #e6e5e5ec;
   border-radius: 5px;
-  box-shadow: 0px 5px 22px -9px;
+  box-shadow:0px 5px 22px -9px;
   margin-right: 10px;
 `;
 

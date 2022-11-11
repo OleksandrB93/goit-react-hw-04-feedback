@@ -20,3 +20,6 @@ export default function Statistics({ good, neutral, bad, total, goodPercent }) {
     </div>
   );
 }
+
+
+
